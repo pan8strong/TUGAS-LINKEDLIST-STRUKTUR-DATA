@@ -20,3 +20,20 @@ class LinkedList:
                 current = current.next
             current.next = new_node
 
+def tampilkan_pesanan(self):
+        current = self.head
+        if not current:
+            print("Keranjang masih kosong")
+            return
+        while current:
+            for i in range(current.jumlah_pesanan):
+                print(f"{current.menu} {current.harga} Rupiah")
+            current = current.next
+
+    def total_harga(self):
+        current = self.head
+        total = 0
+        while current:
+            total += current.harga * current.jumlah_pesanan
+            current = current.next
+        return total
