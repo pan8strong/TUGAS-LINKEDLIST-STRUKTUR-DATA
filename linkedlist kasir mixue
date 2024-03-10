@@ -37,3 +37,24 @@ def tampilkan_pesanan(self):
             total += current.harga * current.jumlah_pesanan
             current = current.next
         return total
+
+# Inisialisasi menu Miexue
+miexue_menu = {
+    "miexue ice cream": 5000,
+    "boba shake": 16000,
+    "mi sundae": 14000,
+    "mi ganas": 11000,
+    "creamy mango boba": 22000
+}
+
+# Fungsi untuk input pesanan
+def pesan_menu(menu, jumlah_pesanan):
+    menu = menu.lower()
+    if menu in miexue_menu:
+        order.tambah_pesanan(menu, miexue_menu[menu], jumlah_pesanan)
+        print(f"{jumlah_pesanan} {menu} telah ditambahkan ke keranjang")
+    else:
+        print("Menu tidak tersedia")
+
+# Inisialisasi linked list untuk pesanan
+order = LinkedList()
