@@ -58,3 +58,21 @@ def pesan_menu(menu, jumlah_pesanan):
 
 # Inisialisasi linked list untuk pesanan
 order = LinkedList()
+
+# Daftar Menu
+print("Daftar Menu:")
+for menu, harga in miexue_menu.items():
+    print(f"{menu.capitalize()} - {harga} Rupiah")
+
+# Proses pemesanan
+while True:
+    pilihan_menu = input("Silakan pilih menu (ketik 'selesai' untuk mengakhiri): ").lower()
+    if pilihan_menu == "selesai":
+        break
+    jumlah_pesanan = int(input("Masukkan jumlah pesanan: "))
+    pesan_menu(pilihan_menu, jumlah_pesanan)
+
+# Tampilkan pesanan dan total harga
+print("Pesanan Anda:")
+order.tampilkan_pesanan()
+print(f"Total harga yang harus dibayarkan: {order.total_harga()} Rupiah.")
