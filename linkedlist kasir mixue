@@ -30,7 +30,7 @@ def tampilkan_pesanan(self):
                 print(f"{current.menu} {current.harga} Rupiah")
             current = current.next
 
-    def total_harga(self):
+def total_harga(self):
         current = self.head
         total = 0
         while current:
